@@ -7,6 +7,10 @@ authors = ["Andrei"]
 [tool.poetry.dependencies]
 python = "^3.8"
 openfabric-pysdk = "0.2.7"
+wikipedia-api = "^0.6.0"
+sentence-transformers = "^2.2.2"
+transformers = "^4.36.2"
+yake = "^0.4.8"
 
 
 [tool.poetry.dev-dependencies]

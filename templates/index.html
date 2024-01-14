@@ -1,0 +1,320 @@
+<!-- The HTML (excluding the script) and CSS sections for this chatbot have been refined and customized, adapting elements from the source
+https://codepen.io/sajadhsm/pen/odaBdd to align with our specific use case. The copyright information for the same is
+given below -->
+<!--
+Copyright (c) 2024 by Sajad Hashemian (https://codepen.io/sajadhsm/pen/odaBdd)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+documentation files (the "Software"), to deal in the Software without restriction, including without limitation the
+rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit
+persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the
+Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thushara's ChatBot UI</title>
+  <style>
+    :root {
+      --body-bg: linear-gradient(0deg, #f8ddec, #bbd6de);
+      --chatbot-bg: #fff;
+      --border: 3px solid #e2e6e7;
+      --left-msg-bg: #ececec;
+      --right-msg-bg: #579ffb;
+    }
+
+    html {
+      box-sizing: border-box;
+    }
+
+    *,
+    *:before,
+    *:after {
+      margin: 0;
+      padding: 0;
+      box-sizing: inherit;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: var(--body-bg);
+      font-family: Helvetica, sans-serif;
+    }
+
+    .chatbot {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 867px;
+      margin: 25px 10px;
+      height: calc(100% - 250px);
+      border: var(--border);
+      border-radius: 5px;
+      background: var(--chatbot-bg);
+      box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
+    }
+
+    .chatbot-chat {
+      flex: 1;
+      overflow-y: auto;
+      padding: 10px;
+      background-color: #fcfcfe;
+      background-image: url("https://i.ibb.co/nbjqPS8/Untitled-design-3.png");
+    }
+
+    .msg {
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 10px;
+    }
+
+    .msg:last-of-type {
+      margin: 0;
+    }
+
+    .sender-icon {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+      background: #ddd;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-radius: 50%;
+    }
+
+    .speech-bubble {
+      max-width: 450px;
+      padding: 15px;
+      border-radius: 15px;
+      background: var(--left-msg-bg);
+    }
+
+    .sender {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .sender-name {
+      margin-right: 10px;
+      font-weight: bold;
+    }
+
+    .left-msg .speech-bubble {
+      border-bottom-left-radius: 0;
+    }
+
+    .right-msg {
+      flex-direction: row-reverse;
+    }
+
+    .right-msg .speech-bubble {
+      background: var(--right-msg-bg);
+      color: #fff;
+      border-bottom-right-radius: 0;
+    }
+
+    .right-msg .sender-icon {
+      margin: 0 0 0 10px;
+    }
+
+    .chatbot-inputarea {
+      display: flex;
+      padding: 10px;
+      border-top: var(--border);
+      background: #eee;
+    }
+
+    .chatbot-inputarea * {
+      padding: 10px;
+      border: none;
+      border-radius: 3px;
+      font-size: 1em;
+    }
+
+    .chatbot-input {
+      flex: 1;
+      background: #ddd;
+      font-family: Helvetica, sans-serif;
+    }
+
+    .chatbot-send-btn {
+      margin-left: 10px;
+      background: rgb(166, 210, 239);
+      color: rgb(17, 86, 132);
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.23s;
+    }
+
+    .chatbot-send-btn:hover {
+      background: rgb(100, 163, 204);
+    }
+
+    .spinner {
+      border: 4px solid rgba(0, 0, 0, 0.1);
+      border-left: 4px solid #3498db;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    #loading-container {
+      display: inline-flex;
+      /* Use inline-flex for inline alignment */
+      align-items: center;
+      /* Align items vertically in the center */
+    }
+  </style>
+</head>
+
+<body class="container mt-5">
+  <section class="chatbot">
+    <main class="chatbot-chat">
+
+      <!-- A Greeting from the Chatbot -->
+      <div class="msg left-msg">
+        <div class="sender-icon" style="background-image: url(https://i.ibb.co/2jqHXQ0/Untitled-design.png)"></div>
+        <div class="speech-bubble">
+          <div class="sender">
+            <div class="sender-name">Thushara's ChatBot</div>
+          </div>
+          <div class="msg-text">
+            Dummy message. Attach the GitHub link. Ask your questions!
+          </div>
+        </div>
+      </div>
+
+      <!-- User's input as a speech bubble -->
+      <div class="msg right-msg">
+        <div class="sender-icon"
+          style="background-image: url(https://i.ibb.co/MDCG6GZ/Untitled-design-4.png); display: none;"
+          id="user-message-icon"></div>
+        <div class="speech-bubble" id="user-message-bubble" style="display: none;">
+          <div class="sender">
+            <div class="sender-name">You</div>
+          </div>
+          <div class="msg-text" id="user-input">
+            <!-- User's input will be displayed here dynamically once the user hits submit -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Chatbot's response as a speech bubble -->
+      <div class="msg left-msg">
+        <div class="sender-icon"
+          style="background-image: url(https://i.ibb.co/2jqHXQ0/Untitled-design.png); display: none;"
+          id="chatbot-response-icon"></div>
+        <div class="speech-bubble" id="chatbot-response-bubble" style="display: none;">
+          <div class="sender">
+            <div class="sender-name">Thushara's ChatBot</div>
+          </div>
+          <div class="msg-text" id="chatbot-response">
+            <!-- Chatbot response bubble is dynamically updated when the response is available -->
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Text area to take multiple questions from the user -->
+    <form class="chatbot-inputarea" id="chat-form">
+      <textarea class="chatbot-input" name="questions" id="user-message" required
+        placeholder="Press Enter to ask multiple questions"></textarea>
+      <button type="button" class="chatbot-send-btn" onclick="submitUserMessage()">Ask Me!</button>
+    </form>
+
+    <script>
+      function submitUserMessage() {
+        // Get user's input
+        var userMessage = document.getElementById('user-message').value;
+
+        // Display user's message bubble only if there is input
+        var userMessageBubble = document.getElementById('user-message-bubble');
+        var userMessageIcon = document.getElementById('user-message-icon');
+
+        // Display a waiting message and loader till the user gets a response
+        var chatbotResponseElement = document.getElementById('chatbot-response');
+        chatbotResponseElement.innerHTML = '<div id="loading-container">' +
+          '<span id="loading-message">I am on it! This may take a while..&nbsp;</span>' +
+          '<div id="spinner" class="spinner"></div>' +
+          '</div>';
+        var chatbotResponseBubble = document.getElementById('chatbot-response-bubble');
+        var chatbotResponseIcon = document.getElementById('chatbot-response-icon');
+        chatbotResponseBubble.style.display = 'block';
+        chatbotResponseIcon.style.display = 'block';
+
+        if (userMessage.trim() !== '') {
+          // Update the user message bubble content
+          var userMessageElement = document.getElementById('user-input');
+          userMessageElement.innerHTML = userMessage.replace(/\n/g, '<br>');
+
+          // Display the user message bubble and the icon only if the user message is available
+          userMessageBubble.style.display = 'block';
+          userMessageIcon.style.display = 'block';
+
+          // Make an AJAX request to the Flask server
+          var userRequest = new XMLHttpRequest();
+          userRequest.open('POST', '/', true);
+          userRequest.setRequestHeader('Content-Type', 'application/json');
+          userRequest.onload = function () {
+            if (userRequest.status === 200) {
+              // Parse and display the chatbot's response
+              var response = JSON.parse(userRequest.responseText);
+              chatbotInput = String(userMessage).split('\n')
+              chatbotOutput = String(response.message).split('\n')
+
+              // Display every question-answer pair as the chatbot response
+              var chatbotResponseElement = document.getElementById('chatbot-response');
+              let finalResponse = []
+              for (var i = 0; i < chatbotInput.length; i++) {
+                var input = chatbotInput[i]
+                var output = chatbotOutput[i]
+                currResponse = input + " : " + output
+                finalResponse.push(currResponse)
+              }
+              chatbotResponseElement.innerHTML = finalResponse.join('\n').replace(/\n/g, '<br>');
+            } else {
+              chatbotResponseElement.textContent = "Sorry, something went wrong!"
+              console.error('Error:', userRequest.statusText);
+            }
+          };
+
+          // Send the user's message to the Flask server
+          var data = JSON.stringify({ 'user_message': userMessage });
+          userRequest.send(data);
+        }
+      }
+    </script>
+  </section>
+</body>
+
+</html>
