@@ -30,6 +30,8 @@ Run the start script to open Swagger UI and interact with the execute API endpoi
 ./start.sh
 ```
 A demo showcasing the Swagger interface is presented below.
+https://github.com/ThusharaN/ScienceChatBot/assets/85170859/cb9218c6-6776-4ef2-a8d6-b765e852fc2f
+
 
 ### Using our own Custome UI!
 As a full-stack engineer, I couldn't help but include a basic UI built using [Flask](https://flask.palletsprojects.com/en/3.0.x/) for richer experience. Follow these steps to explore:
