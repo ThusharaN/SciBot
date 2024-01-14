@@ -2,10 +2,15 @@ import wikipediaapi
 import yake
 from sentence_transformers import SentenceTransformer, util
 from transformers import pipeline
+import yaml
 
 
 class ScienceChatBot:
-    def __init__(self, model_name='deepset/roberta-base-squad2'):
+    def __init__(self):
+        with open("config.yaml", "r") as yamlfile:
+            self.data = yaml.load(yamlfile, Loader=yaml.FullLoader)
+
+        model_name = self.data['model_name']
         self.oracle = pipeline(model=model_name)
 
     def extract_keywords(self, question):
@@ -15,14 +20,10 @@ class ScienceChatBot:
         Returns:
             list: a list of keywords
         """
-        language = "en"
-        max_ngram_size = 3
-        deduplication_threshold = 0.9
-        deduplication_algo = 'seqm'
-        windowSize = 1
-        numOfKeywords = 10
-        custom_kw_extractor = yake.KeywordExtractor(lan=language, n=max_ngram_size, dedupLim=deduplication_threshold,
-                                                    dedupFunc=deduplication_algo, windowsSize=windowSize, top=numOfKeywords, features=None)
+
+        custom_kw_extractor = yake.KeywordExtractor(lan=self.data['language'], n=self.data['max_ngram_size'],
+                                                    dedupLim=self.data['deduplication_threshold'], dedupFunc=self.data['deduplication_algo'],
+                                                    windowsSize=self.data['windowSize'], top=self.data['numOfKeywords'], features=None)
         keywords = custom_kw_extractor.extract_keywords(question)
         return [kw[0] for kw in keywords]
 
@@ -33,7 +34,8 @@ class ScienceChatBot:
         Returns:
             list: a list of wikipedia articles
         """
-        user_agent = "ChatBot/1.0 (thushara.nair02@gmail.com)"
+
+        user_agent = self.data['user_agent']
         wiki_wiki = wikipediaapi.Wikipedia(
             user_agent=user_agent, language="en", extract_format=wikipediaapi.ExtractFormat.WIKI)
         articles = []
@@ -59,6 +61,7 @@ class ScienceChatBot:
         Returns:
             str: final context for the question
         """
+
         # Encode the question and article content
         question_embedding = model.encode(
             question, convert_to_tensor=True, show_progress_bar=False)
@@ -86,6 +89,7 @@ class ScienceChatBot:
         Returns:
             list: list of answers for the corresponding questions
         """
+
         answers = []
         for question in questions:
             # Extracting keywords from the question
@@ -96,7 +100,8 @@ class ScienceChatBot:
 
             # Use a pre-trained SentenceTransformer model for semantic similarity
             # Identify relevant context for the question
-            context_model = SentenceTransformer('paraphrase-MiniLM-L6-v2')
+            context_model = SentenceTransformer(
+                self.data['sentence_transformer'])
             context = self.filter_and_combine_articles(
                 question, articles, context_model)
 
