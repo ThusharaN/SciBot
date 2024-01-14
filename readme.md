@@ -31,6 +31,7 @@ Run the start script to open Swagger UI and interact with the execute API endpoi
 ```
 Here is a demo showing the Swagger interface:
 ![eac7d564-8b61-4f1a-8b2a-d71c5059a536](https://github.com/ThusharaN/ScienceChatBot/assets/85170859/1552c89c-dbab-459e-8192-89da093a8b19)
+(The gif may render slower than the actual speed!)
 
 
 ### Using our own Custome UI!
