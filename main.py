@@ -23,6 +23,9 @@ def config(configuration: Dict[str, ConfigClass], state: State):
 # Callback function called on each execution pass
 ############################################################
 def execute(request: SimpleText, ray: Ray, state: State) -> SimpleText:
+    output = []
     chatbot = ScienceChatBot()
-    output = chatbot.predict_answer(request.text)
+    answers = chatbot.predict_answer(request.text)
+    for question, answer in zip(request.text, answers):
+        output.append(" : ".join([question, answer]))
     return SchemaUtil.create(SimpleText(), dict(text=output))
