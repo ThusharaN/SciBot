@@ -29,12 +29,12 @@ Run the start script to open Swagger UI and interact with the execute API endpoi
 ```sh
 ./start.sh
 ```
-A demo showcasing the Swagger interface is presented below.
-https://github.com/ThusharaN/ScienceChatBot/assets/85170859/cb9218c6-6776-4ef2-a8d6-b765e852fc2f
+Here is a demo showing the Swagger interface:
+![eac7d564-8b61-4f1a-8b2a-d71c5059a536](https://github.com/ThusharaN/ScienceChatBot/assets/85170859/1552c89c-dbab-459e-8192-89da093a8b19)
 
 
 ### Using our own Custome UI!
-As a full-stack engineer, I couldn't help but include a basic UI built using [Flask](https://flask.palletsprojects.com/en/3.0.x/) for richer experience. Follow these steps to explore:
+As a full-stack engineer, I couldn't help but include a basic UI built using [Flask](https://flask.palletsprojects.com/en/3.0.x/) for a richer experience. Follow these steps to explore:
 Set Flask to the app file and development environment:
 ```sh
 export FLASK_APP=chatbot
@@ -45,4 +45,4 @@ Then, launch the Flask app:
 flask run
 ```
 
-A demo featuring the Custom UI is shown for your convenience.
+A demo featuring the Custom UI:
