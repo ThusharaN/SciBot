@@ -1,50 +1,49 @@
-# AI Junior Developer Test 
-Welcome! You’ve stepped into the arena – now show us what you’ve got! 
+# A ChatBot for Science!
 
-## Mission
-You're not just fiddling with code here; you're architecting the future. Your battleground? An AI app framework crying out for a brain.
+## <u>About the project</u>
+The intuition behind this project was to build a chatbot that mimics the Retriever-Generator mode of Question-Answering (QA) with a some nuances. Our QA pipeline, thus, unfolds in three key stages:
+- [YAKE](https://liaad.github.io/yake/) does Keyword Extraction 🔑
+    - Leveraging YAKE, our Keyword Extractor, we unveil essential keywords from questions. 
+    - Configurations, like the number of keywords and maximum words per keyword, shape the process.
+- Get more Context! 📖
+    - Unearthing answers requires context. We adopt a two-pronged strategy.
+    - We pinpoint Wikipedia articles related to selected keywords, essentially turning Wikipedia into our Retriever-Generator knowledge base.
+    - A straightforward similarity mechanism filters and merges relevant articles to craft the perfect context for our questions.
+- [RoBERTa](https://huggingface.co/deepset/roberta-base-squad2) finds the Answer 🤖
+    - Armed with the question and context, RoBERTa steps in to predict the answer.
 
-Your task: Forge an 💬NLP chatbot that doesn’t just answer, but masters science-related questions.
 
-Immerse yourself in the main.py file. Your battlefield is the execute function. Time to unleash your genius:
-```python
-############################################################
-# Callback function called on each execution pass
-############################################################
-def execute(request: SimpleText, ray: Ray, state: State) -> SimpleText:
-    output = []
-    for text in request.text:
-        # TODO Add code here
-        response = 'Hello!' <<-- Here you add the magic 
-        output.append(response)
-
-    return SchemaUtil.create(SimpleText(), dict(text=output))
+## <u>How to run?</u>
+Before diving into the project, let's set up the groundwork. First, activate the project's virtual environment using poetry:
+```sh
+poetry shell
 ```
-## Ground Rules
-Step up with any arsenal (read: libraries or packages) you believe in, but remember:
-* 👎 External services like chatGPT are off-limits. Stand on your own.
-* 👎 Plagiarism is for the weak. Forge your own path.
-* 👎 A broken app equals failure. Non-negotiable.
+Afterward, install the essential dependencies:
+```sh
+poetry install
+```
+With these steps complete, there are two ways to run the project.
 
-## Deployment Options
-The application can be executed in two different ways:
-* locally by running the `start.sh` 
-* on in a docker container using `Dockerfile` 
-
-## Proving Your Mettle
-* Submit your masterpiece on GitHub. We want the link within **1 week, not a second more**.
-* Go the extra mile and include a video where you walk us through your solution, showcasing 
-it in live action. 
-* We want to see not just what you've created but also how you envisioned and executed it
+### Using Swagger
+Run the start script to open Swagger UI and interact with the execute API endpoint:
+```sh
+./start.sh
+```
+Here is a demo showing the Swagger interface:
+![eac7d564-8b61-4f1a-8b2a-d71c5059a536](https://github.com/ThusharaN/ScienceChatBot/assets/85170859/1552c89c-dbab-459e-8192-89da093a8b19)
+(The gif may render slower than the actual speed!)
 
 
-## This Is It
-We're not just evaluating a project; we're judging your potential to revolutionize our 
-landscape. A half-baked app won’t cut it.
+### Using our own Custome UI!
+As a full-stack engineer, I couldn't help but include a basic UI built using [Flask](https://flask.palletsprojects.com/en/3.0.x/) for a richer experience. Follow these steps to explore:
+Set Flask to the app file and development environment:
+```sh
+export FLASK_APP=chatbot
+export FLASK_ENV=development
+```
+Then, launch the Flask app:
+```sh
+flask run
+```
 
-We're zeroing in on:
-* 👍 Exceptional documentation.
-* 👍 Code that speaks volumes.
-* 👍 Inventiveness that dazzles.
-* 👍 A problem-solving beast.
-* 👍 Unwavering adherence to the brief
+A demo featuring the Custom UI:
