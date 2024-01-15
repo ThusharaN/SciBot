@@ -46,7 +46,7 @@ The intuition behind this project was to build a chatbot that mimics a Retriever
 - Specifies configuration settings for SciBot.
 
 ### `qatest.py`
-- Contains basic unit test cases to test the ScienceChatBot function.
+- Contains unit test cases to test the basic functionalities of SciBot.
 
 
 ## <u>How to run?</u>
@@ -61,7 +61,7 @@ poetry install
 ```
 With these steps complete, there are two ways to run the project.
 
-### Using Swagger
+### Swagger UI
 Run the start script to open Swagger UI and interact with the execute API endpoint:
 ```sh
 ./start.sh
@@ -72,8 +72,9 @@ Here is a demo showing the Swagger interface:
 ![eac7d564-8b61-4f1a-8b2a-d71c5059a536](https://github.com/ThusharaN/ScienceChatBot/assets/85170859/1552c89c-dbab-459e-8192-89da093a8b19)
 _(The gif may render slower than the actual speed!)_
 
-### Using our own Custom UI!
-As a full-stack engineer, I couldn't help but include a basic UI built using [Flask](https://flask.palletsprojects.com/en/3.0.x/) for a richer experience. Follow these steps to explore:
+### Our own Custom UI!
+As a full-stack engineer, I couldn't help but include a basic UI built using [Flask](https://flask.palletsprojects.com/en/3.0.x/) for a richer experience. I have gone with a toned down version of [OpenFabric AI's](https://openfabric.ai/) theme of blues and pinks for this custom UI. Follow these steps to interact with the SciBot UI:
+
 Set Flask to the app file and development environment:
 ```sh
 export FLASK_APP=chatbot
@@ -90,7 +91,7 @@ A demo featuring the Custom UI:
 _(The gif may render slower than the actual speed!)_
 
 
-## <u>Testing on SciQ</u>
+## <u>Evaluating on SciQ</u>
 The chatbot was tasked with answering some of the questions from the [SciQ dataset](https://huggingface.co/datasets/sciq). 
 There are 2 aspects that can be evaluated from the responses: 
 - Context Quality Assessment: Examining the effectiveness of the chatbot in retrieving relevant context following keyword extraction, and
@@ -122,6 +123,7 @@ The unit test cases can be excuted by running the following command:
 python -m unittest qatest.py
 ```
 The latest code has been tested against these test cases locally. Below is a screenshot showing the test results:
+<img width="796" alt="Screenshot 2024-01-15 at 5 20 57 PM" src="https://github.com/ThusharaN/SciBot/assets/85170859/24dac1bb-98a8-4fca-8507-073cb0d97de3">
 
 
-## <u>Limitations</u>
+## <u>Future Work</u>
