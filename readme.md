@@ -47,3 +47,4 @@ flask run
 ```
 
 A demo featuring the Custom UI:
+![f846c788-a640-4a6e-af17-3cedeebe5d07](https://github.com/ThusharaN/SciBot/assets/85170859/90ba0725-9320-46bb-aef4-494a816872d1)
