@@ -14,13 +14,14 @@ class ScienceChatBot:
         self.oracle = pipeline(model=model_name)
 
     def extract_keywords(self, question):
-        """Extract relevant keywords from the question using YAKE (Yet Another Key Extractor) model
+        """
+        Extract relevant keywords from the question using YAKE (Yet Another Key Extractor) model
+
         Args:
             question (str): a single question
         Returns:
             list: a list of keywords
         """
-
         custom_kw_extractor = yake.KeywordExtractor(lan=self.data['language'], n=self.data['max_ngram_size'],
                                                     dedupLim=self.data['deduplication_threshold'], dedupFunc=self.data['deduplication_algo'],
                                                     windowsSize=self.data['windowSize'], top=self.data['numOfKeywords'], features=None)
@@ -28,13 +29,14 @@ class ScienceChatBot:
         return [kw[0] for kw in keywords]
 
     def fetch_wikipedia_articles(self, keywords):
-        """Identify wikipedia articles for the all the keywords in the question
+        """
+        Identify wikipedia articles for the all the keywords in the question
+        
         Args:
             keywords (list): a list of keywords
         Returns:
             list: a list of wikipedia articles
         """
-
         user_agent = self.data['user_agent']
         wiki_wiki = wikipediaapi.Wikipedia(
             user_agent=user_agent, language="en", extract_format=wikipediaapi.ExtractFormat.WIKI)
@@ -52,7 +54,9 @@ class ScienceChatBot:
         return articles
 
     def filter_and_combine_articles(self, question, articles, model, threshold=0.5):
-        """Filter only the relevant context from the wikipedia articles using a SentenceTransformer
+        """
+        Filter only the relevant context from the wikipedia articles using a SentenceTransformer
+        
         Args:
             question (str): a single question
             articles (list): a list of wikipedia articles
@@ -61,7 +65,6 @@ class ScienceChatBot:
         Returns:
             str: final context for the question
         """
-
         # Encode the question and article content
         question_embedding = model.encode(
             question, convert_to_tensor=True, show_progress_bar=False)
@@ -83,13 +86,14 @@ class ScienceChatBot:
         return combined_content
 
     def predict_answer(self, questions):
-        """Predict the answer to the questions asked by the user
+        """
+        Predict the answer to the questions asked by the user
+        
         Args:
             questions (list): list of questions passed by the user
         Returns:
             list: list of answers for the corresponding questions
         """
-
         answers = []
         for question in questions:
             # Extracting keywords from the question

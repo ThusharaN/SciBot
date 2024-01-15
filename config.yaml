@@ -3,16 +3,16 @@
 chatbot_mode: keyword 
 
 # Configuaryion for the keyword extractor
-language: 'en'
-max_ngram_size: 3
-deduplication_threshold: 0.9
-deduplication_algo: 'seqm'
-windowSize: 1
-numOfKeywords: 10
+language: 'en'  # Language setting for the keyword extractor.
+max_ngram_size: 3 # Maximum size of n-grams for keyword extraction.
+deduplication_threshold: 0.9  # Threshold for deduplication during keyword extraction.
+deduplication_algo: 'seqm'  # Algorithm used for deduplication during keyword extraction.
+windowSize: 1 # Size of the window for keyword extraction.
+numOfKeywords: 10 # Number of keywords to extract.
 
 # Configurations to fetch context
-user_agent: 'ChatBot/1.0 (thushara.nair02@gmail.com)'
-sentence_transformer: 'paraphrase-MiniLM-L6-v2'
+user_agent: 'ChatBot/1.0 (thushara.nair02@gmail.com)' # User agent information for fetching context from Wikipedia.
+sentence_transformer: 'paraphrase-MiniLM-L6-v2' # Model for converting questions and articles into embeddings.
 
 # Model for prediction 
-model_name: 'deepset/roberta-base-squad2'
+model_name: 'deepset/roberta-base-squad2' # Pre-trained model name for prediction (RoBERTa-based for question answering).

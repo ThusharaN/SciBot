@@ -6,6 +6,17 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    """
+    Main endpoint for user interaction.
+
+    Methods:
+    - GET: Renders the HTML template for the chatbot interface.
+    - POST: Processes user input, predicts answers, and returns the responses in JSON format.
+
+    Returns:
+    - GET: HTML template.
+    - POST: JSON response with predicted answers.
+    """
     SEPERATOR = '\n'
     if request.method == 'POST':
         # Converting the string input into a list of strings (questions)
