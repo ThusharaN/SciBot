@@ -31,7 +31,7 @@ Run the start script to open Swagger UI and interact with the execute API endpoi
 ```
 Here is a demo showing the Swagger interface:
 ![eac7d564-8b61-4f1a-8b2a-d71c5059a536](https://github.com/ThusharaN/ScienceChatBot/assets/85170859/1552c89c-dbab-459e-8192-89da093a8b19)
-(The gif may render slower than the actual speed!)
+_(The gif may render slower than the actual speed!)_
 
 
 ### Using our own Custome UI!
@@ -48,3 +48,4 @@ flask run
 
 A demo featuring the Custom UI:
 ![f846c788-a640-4a6e-af17-3cedeebe5d07](https://github.com/ThusharaN/SciBot/assets/85170859/90ba0725-9320-46bb-aef4-494a816872d1)
+_(The gif may render slower than the actual speed!)_
