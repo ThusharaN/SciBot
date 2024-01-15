@@ -124,6 +124,3 @@ python -m unittest qatest.py
 ```
 The latest code has been tested against these test cases locally. Below is a screenshot showing the test results:
 <img width="796" alt="Screenshot 2024-01-15 at 5 20 57 PM" src="https://github.com/ThusharaN/SciBot/assets/85170859/24dac1bb-98a8-4fca-8507-073cb0d97de3">
-
-
-## <u>Future Work</u>
