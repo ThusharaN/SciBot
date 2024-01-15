@@ -11,14 +11,14 @@
 
 ## <u>About the project</u>
 The intuition behind this project was to build a chatbot that mimics a Retriever-Generator approach for Open-Domain Question-Answering (QA). Our QA pipeline, thus, unfolds in three key stages:
-### [YAKE](https://liaad.github.io/yake/) does Keyword Extraction 🔑
-- Leveraging YAKE, our Keyword Extractor, we unveil essential keywords from questions. 
+### 1. [YAKE](https://liaad.github.io/yake/) does Keyword Extraction 🔑
+- Leveraging YAKE, our Keyword Extractor, we identify important keywords from the questions. 
 - Configurations, like the number of keywords and maximum words per keyword, shape the process.
-### Get more Context! 📖
+### 2. Get more Context! 📖
 - Unearthing answers requires context. We adopt a two-pronged strategy.
-- We pinpoint Wikipedia articles related to selected keywords, essentially turning Wikipedia into our Retriever-Generator knowledge base.
-- A straightforward similarity mechanism filters and merges relevant articles to craft the perfect context for our questions.
-### [RoBERTa](https://huggingface.co/deepset/roberta-base-squad2) finds the Answer 🤖
+- We pinpoint Wikipedia articles related to selected keywords, essentially turning Wikipedia into our knowledge base i.e., our domain.
+- A straightforward similarity mechanism filters and merges relevant articles to craft a relevant context for our questions.
+### 3. [RoBERTa](https://huggingface.co/deepset/roberta-base-squad2) finds the Answer 🤖
 - Armed with the question and context, RoBERTa steps in to predict the answer.
 
 
@@ -100,21 +100,21 @@ There are 2 aspects that can be evaluated from the responses:
 
 | **Question**                                                                                  |**Actual Answer**|**Predicted Answer**      |
 | ----------------------------------------------------------------------------------------------| ----------------|--------------------------|
-| Through which process are plants able to make their own food?                                 | photosynthesis  | photosynthesis supported |
+| Through which process are plants able to make their own food?                                 | photosynthesis  | photosynthesis           |
 | Each specific polypeptide has a unique linear sequence of which acids?                        | amino           | amino acids              |
 | What is the most common type of anemia?                                                       | iron-def        | Iron-deficiency anemia   |
-| What  is the process by which the nucleus of a eukaryotic cell divides?                       | mitosis         | mitosis supported        |
+| What  is the process by which the nucleus of a eukaryotic cell divides?                       | mitosis         | mitosis                  |
+| What mineral is used in jewelry because of its striking greenish-blue color?                  | turquoise       | malachite                |
 | What are hydrocarbons most important use?                                                     | fuel            | fuels and chemicals      |
 | When a hypothesis is repeatedly confirmed, what can it then become?                           | theory          | part of a theory         |
 | The effect of acetylcholine in heart muscle is inhibitory rather than what?                   | excitatory      | excitatory               |
+| What is process of producing eggs in the ovary called?                                        | oogenesis       | meiosis                  |
 | A phase diagram plots pressure and what else?                                                 | temperature     | temperature              |
 | Energy resources can be put into two categories — renewable or?                               | nonrenewable    | non-renewable            |
 | Who proposed the theory of evolution by natural selection?                                    | darwin          | Charles Darwin & Alfred Russel Wallace |
 | What is the term for the secretion of saliva?                                                 | salivation      | spit                     |
 | Caffeine and alcohol are two examples of what type of drug?                                   | psychoactive    | stimulant                |
 | Sometimes referred to as air, what do we call the mixture of gases that surrounds the planet? | atmosphere      | The atmosphere of Earth  |
-| What is process of producing eggs in the ovary called?                                        | oogenesis       | meiosis                  |
-| What mineral is used in jewelry because of its striking greenish-blue color?                  | turquoise       | malachite                |
 | Who was the first person known to use a telescope to study the sky?                           | galileo         | Galileo Galilei          |
 
 ## <u>Unit Tests</u>
