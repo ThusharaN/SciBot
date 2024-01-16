@@ -1,1 +1,29 @@
-{"ray": {"sid": "bcb8ca8871604e10a67c5d936f868565", "uid": null, "qid": "1254410773484756bc12db6eee03aed4", "rid": null, "bars": {"default": {"percent": "100", "remaining": "0"}}, "messages": [], "status": "COMPLETED", "created_at": "2024-01-15T01:42:30.695026", "updated_at": "2024-01-15T01:43:01.207913", "finished": true}, "in": {"text": ["What is the name for a fertilized cell that results from the uniting of two gametes?"]}, "out": {"text": ["What is the name for a fertilized cell that results from the uniting of two gametes? : zygote"]}}
+{
+    "ray": {
+        "sid": "bcb8ca8871604e10a67c5d936f868565",
+        "uid": null,
+        "qid": "1254410773484756bc12db6eee03aed4",
+        "rid": null,
+        "bars": {
+            "default": {
+                "percent": "100",
+                "remaining": "0"
+            }
+        },
+        "messages": [],
+        "status": "COMPLETED",
+        "created_at": "2024-01-15T01:42:30.695026",
+        "updated_at": "2024-01-15T01:43:01.207913",
+        "finished": true
+    },
+    "in": {
+        "text": [
+            "What is the name for a fertilized cell that results from the uniting of two gametes?"
+        ]
+    },
+    "out": {
+        "text": [
+            "What is the name for a fertilized cell that results from the uniting of two gametes? : zygote"
+        ]
+    }
+}

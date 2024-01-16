@@ -96,6 +96,11 @@ class ScienceChatBot:
         """
         answers = []
         for question in questions:
+            question = str(question).strip()
+            if question == "":
+                answers.append("Please enter a valid question!")
+                continue
+            
             # Extracting keywords from the question
             keywords = self.extract_keywords(question)
 

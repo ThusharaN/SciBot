@@ -36,6 +36,10 @@ class ScienceChatBotTest(unittest.TestCase):
         self.assertIsInstance(answers, list)
         self.assertGreater(len(answers), 0)
         self.assertNotEqual(answers[0], "I could not find an answer to that!")
+    
+    def test_invalid_question(self):
+        answers = self.chatbot.predict_answer("   ")
+        self.assertEqual(answers[0], "Please enter a valid question!")
 
 
 if __name__ == '__main__':

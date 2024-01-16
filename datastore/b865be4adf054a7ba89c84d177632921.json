@@ -1,1 +1,31 @@
-{"ray": {"sid": "a8c86e2e7b144ab9bef614ad303ebcfe", "uid": null, "qid": "b865be4adf054a7ba89c84d177632921", "rid": null, "bars": {"default": {"percent": "100", "remaining": "0"}}, "messages": [], "status": "COMPLETED", "created_at": "2024-01-15T01:38:08.685224", "updated_at": "2024-01-15T01:38:51.507092", "finished": true}, "in": {"text": ["What are the 7 colors in a rainbow?", "Bases turn red litmus paper which color?"]}, "out": {"text": ["What are the 7 colors in a rainbow? : red, orange, yellow, green, blue, indigo and violet", "Bases turn red litmus paper which color? : blue"]}}
+{
+    "ray": {
+        "sid": "a8c86e2e7b144ab9bef614ad303ebcfe",
+        "uid": null,
+        "qid": "b865be4adf054a7ba89c84d177632921",
+        "rid": null,
+        "bars": {
+            "default": {
+                "percent": "100",
+                "remaining": "0"
+            }
+        },
+        "messages": [],
+        "status": "COMPLETED",
+        "created_at": "2024-01-15T01:38:08.685224",
+        "updated_at": "2024-01-15T01:38:51.507092",
+        "finished": true
+    },
+    "in": {
+        "text": [
+            "What are the 7 colors in a rainbow?",
+            "Bases turn red litmus paper which color?"
+        ]
+    },
+    "out": {
+        "text": [
+            "What are the 7 colors in a rainbow? : red, orange, yellow, green, blue, indigo and violet",
+            "Bases turn red litmus paper which color? : blue"
+        ]
+    }
+}

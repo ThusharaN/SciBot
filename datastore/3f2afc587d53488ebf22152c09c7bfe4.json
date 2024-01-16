@@ -1,1 +1,29 @@
-{"ray": {"sid": "50383f3b20e648c99ab179feed5ad50f", "uid": null, "qid": "3f2afc587d53488ebf22152c09c7bfe4", "rid": null, "bars": {"default": {"percent": "100", "remaining": "0"}}, "messages": [], "status": "COMPLETED", "created_at": "2024-01-15T01:41:11.602619", "updated_at": "2024-01-15T01:42:11.996733", "finished": true}, "in": {"text": ["d)India has how many union territories?"]}, "out": {"text": ["d)India has how many union territories? : eight"]}}
+{
+    "ray": {
+        "sid": "50383f3b20e648c99ab179feed5ad50f",
+        "uid": null,
+        "qid": "3f2afc587d53488ebf22152c09c7bfe4",
+        "rid": null,
+        "bars": {
+            "default": {
+                "percent": "100",
+                "remaining": "0"
+            }
+        },
+        "messages": [],
+        "status": "COMPLETED",
+        "created_at": "2024-01-15T01:41:11.602619",
+        "updated_at": "2024-01-15T01:42:11.996733",
+        "finished": true
+    },
+    "in": {
+        "text": [
+            "d)India has how many union territories?"
+        ]
+    },
+    "out": {
+        "text": [
+            "d)India has how many union territories? : eight"
+        ]
+    }
+}

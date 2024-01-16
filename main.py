@@ -27,5 +27,8 @@ def execute(request: SimpleText, ray: Ray, state: State) -> SimpleText:
     chatbot = ScienceChatBot()
     answers = chatbot.predict_answer(request.text)
     for question, answer in zip(request.text, answers):
+        if answer == "Please enter a valid question!":
+            output.append(answer)
+            continue
         output.append(" : ".join([question, answer]))
     return SchemaUtil.create(SimpleText(), dict(text=output))

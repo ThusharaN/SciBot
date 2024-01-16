@@ -1,1 +1,29 @@
-{"ray": {"sid": "11ea903ab4ce4c6ea744ba959961f274", "uid": null, "qid": "8959effc9b2d4a45bbd2bfa790c750c4", "rid": null, "bars": {"default": {"percent": "100", "remaining": "0"}}, "messages": [], "status": "COMPLETED", "created_at": "2024-01-15T00:25:32.523469", "updated_at": "2024-01-15T00:25:43.486615", "finished": true}, "in": {"text": ["Bases turn red litmus paper which color?"]}, "out": {"text": ["blue"]}}
+{
+    "ray": {
+        "sid": "11ea903ab4ce4c6ea744ba959961f274",
+        "uid": null,
+        "qid": "8959effc9b2d4a45bbd2bfa790c750c4",
+        "rid": null,
+        "bars": {
+            "default": {
+                "percent": "100",
+                "remaining": "0"
+            }
+        },
+        "messages": [],
+        "status": "COMPLETED",
+        "created_at": "2024-01-15T00:25:32.523469",
+        "updated_at": "2024-01-15T00:25:43.486615",
+        "finished": true
+    },
+    "in": {
+        "text": [
+            "Bases turn red litmus paper which color?"
+        ]
+    },
+    "out": {
+        "text": [
+            "blue"
+        ]
+    }
+}

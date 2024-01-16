@@ -21,7 +21,7 @@ The intuition behind this project was to build a chatbot that mimics a Retriever
 ### 3. [RoBERTa](https://huggingface.co/deepset/roberta-base-squad2) finds the Answer 🤖
 - Armed with the question and context, RoBERTa steps in to predict the answer.
 
-**PS - I have created a short video explaining the approach to building this project and a demo of the ChatBot. You can find it here: [SciBot Demo](https://drive.google.com/file/d/1-tqXBtFVTgST2XpsJeykI5j08F3mOSv_/view?usp=drive_link)**
+### I have created a short video explaining the approach to building this project and a demo of the ChatBot. You can find it here: [SciBot Demo](https://drive.google.com/file/d/1-tqXBtFVTgST2XpsJeykI5j08F3mOSv_/view?usp=drive_link)
 
 ## <u>Core Functions</u>
 ### `main.py`
