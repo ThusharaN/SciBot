@@ -119,9 +119,10 @@ There are 2 aspects that can be evaluated from the responses:
 | Who was the first person known to use a telescope to study the sky?                           | galileo         | Galileo Galilei          |
 
 ## <u>Unit Tests</u>
-The unit test cases can be excuted by running the following command:
+The unit test cases can be executed by running the following command:
 ```sh
 python -m unittest qatest.py
 ```
 The latest code has been tested against these test cases locally. Below is a screenshot showing the test results:
-<img width="796" alt="Screenshot 2024-01-15 at 5 20 57 PM" src="https://github.com/ThusharaN/SciBot/assets/85170859/24dac1bb-98a8-4fca-8507-073cb0d97de3">
+<img width="728" alt="Screenshot 2024-01-16 at 11 47 15 PM" src="https://github.com/ThusharaN/SciBot/assets/85170859/9929e5b1-c06f-46c3-ad37-5bf9a556bcdc">
+
