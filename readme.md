@@ -65,6 +65,7 @@ With these steps complete, there are two ways to run the project.
 ### Swagger UI
 Run the start script to open Swagger UI and interact with the execute API endpoint:
 ```sh
+poetry shell
 ./start.sh
 ```
 The Swagger endpoint can be found at `http://0.0.0.0:5500/swagger-ui/`
