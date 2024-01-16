@@ -1,4 +1,4 @@
-# Configurstions for SciBot
+# Configurations for SciBot
 
 # Configuaryion for the keyword extractor
 language: 'en'  # Language setting for the keyword extractor.
