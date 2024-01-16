@@ -87,7 +87,7 @@ flask run
 The app will be up and running on the server `http://127.0.0.1:5000/`
 
 A demo featuring the Custom UI:
-![f846c788-a640-4a6e-af17-3cedeebe5d07](https://github.com/ThusharaN/SciBot/assets/85170859/90ba0725-9320-46bb-aef4-494a816872d1)
+![6d57872a-19fb-4216-8e22-cf2fb46a7a3c](https://github.com/ThusharaN/SciBot/assets/85170859/57c0802b-03f9-4e06-9abd-e691d39997e8)
 _(The gif may render slower than the actual speed!)_
 
 
