@@ -209,9 +209,10 @@ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
           </div>
           <div class="msg-text">
             Welcome to SciBot!<br>
-            I'm a ChatBot, here to help with your questions about science and related topics. 
+            I'm a ChatBot, here to help with your questions about science and related topics.
             Feel free to ask anything, and I'll do my best to provide you with the information you're looking for.<br>
-            You can find more information about me here: <a href="https://github.com/ThusharaN/SciBot">A ChatBot for Science!</a>
+            You can find more information about me here: <a href="https://github.com/ThusharaN/SciBot">A ChatBot for
+              Science!</a>
           </div>
         </div>
       </div>
@@ -276,6 +277,7 @@ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
         chatbotResponseIcon.style.display = 'block';
 
         if (userMessage.trim() !== '') {
+          userMessage = userMessage.trim()
           // Update the user message bubble content
           var userMessageElement = document.getElementById('user-input');
           userMessageElement.innerHTML = userMessage.replace(/\n/g, '<br>');
@@ -296,7 +298,6 @@ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
               chatbotOutput = String(response.message).split('\n')
 
               // Display every question-answer pair as the chatbot response
-              var chatbotResponseElement = document.getElementById('chatbot-response');
               let finalResponse = []
               for (var i = 0; i < chatbotInput.length; i++) {
                 var input = chatbotInput[i]
@@ -314,6 +315,9 @@ OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
           // Send the user's message to the Flask server
           var data = JSON.stringify({ 'user_message': userMessage });
           userRequest.send(data);
+        }
+        else {
+          chatbotResponseElement.textContent = "Please enter a valid question!"
         }
       }
     </script>
