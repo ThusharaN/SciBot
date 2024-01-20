@@ -127,3 +127,4 @@ python -m unittest qatest.py
 The latest code has been tested against these test cases locally. Below is a screenshot showing the test results:
 <img width="728" alt="Screenshot 2024-01-16 at 11 47 15 PM" src="https://github.com/ThusharaN/SciBot/assets/85170859/9929e5b1-c06f-46c3-ad37-5bf9a556bcdc">
 
+> This project was done as part of an assignment. The problem statement for the same can be found [here](https://github.com/ThusharaN/SciBot/blob/main/problemstatement.md).
