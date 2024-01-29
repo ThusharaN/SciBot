@@ -1,16 +1,16 @@
 [tool.poetry]
-name = "openfabric-test"
+name = "scibot"
 version = "1.1"
 description = "cognitive-assistant"
-authors = ["Andrei"]
+authors = ["Thushara"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-openfabric-pysdk = "0.2.7"
 wikipedia-api = "^0.6.0"
 sentence-transformers = "^2.2.2"
 transformers = "^4.36.2"
 yake = "^0.4.8"
+flask = "^2.3.3"
 
 
 [tool.poetry.dev-dependencies]
