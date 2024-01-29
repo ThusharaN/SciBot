@@ -21,7 +21,6 @@ The intuition behind this project was to build a chatbot that mimics a Retriever
 ### 3. [RoBERTa](https://huggingface.co/deepset/roberta-base-squad2) finds the Answer 🤖
 - Armed with the question and context, RoBERTa steps in to predict the answer.
 
-### I have created a short video explaining the approach to building this project and a demo of the ChatBot. You can find it here: [SciBot Demo](https://drive.google.com/file/d/1-tqXBtFVTgST2XpsJeykI5j08F3mOSv_/view?usp=drive_link)
 
 ## <u>Core Functions</u>
 ### `main.py`
@@ -60,22 +59,10 @@ Afterward, install the essential dependencies:
 ```sh
 poetry install
 ```
-With these steps complete, there are two ways to run the project.
-
-### Swagger UI
-Run the start script to open Swagger UI and interact with the execute API endpoint:
-```sh
-poetry shell
-./start.sh
-```
-The Swagger endpoint can be found at `http://0.0.0.0:5500/swagger-ui/`
-
-Here is a demo showing the Swagger interface:
-![eac7d564-8b61-4f1a-8b2a-d71c5059a536](https://github.com/ThusharaN/ScienceChatBot/assets/85170859/1552c89c-dbab-459e-8192-89da093a8b19)
-_(The gif may render slower than the actual speed!)_
+With these steps complete, the project can be run using the Custom UI!
 
 ### Our own Custom UI!
-As a full-stack engineer, I couldn't help but include a basic UI built using [Flask](https://flask.palletsprojects.com/en/3.0.x/) for a richer experience. I have gone with a toned down version of [OpenFabric AI's](https://openfabric.ai/) theme of blues and pinks for this custom UI. Follow these steps to interact with the SciBot UI:
+As a full-stack engineer, I couldn't help but include a basic UI built using [Flask](https://flask.palletsprojects.com/en/3.0.x/) for a richer experience. Follow these steps to interact with the SciBot UI:
 
 Set Flask to the app file and development environment:
 ```sh
@@ -126,5 +113,3 @@ python -m unittest qatest.py
 ```
 The latest code has been tested against these test cases locally. Below is a screenshot showing the test results:
 <img width="728" alt="Screenshot 2024-01-16 at 11 47 15 PM" src="https://github.com/ThusharaN/SciBot/assets/85170859/9929e5b1-c06f-46c3-ad37-5bf9a556bcdc">
-
-> This project was done as part of an assignment. The problem statement for the same can be found [here](https://github.com/ThusharaN/SciBot/blob/main/problemstatement.md).
