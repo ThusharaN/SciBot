@@ -23,12 +23,6 @@ The intuition behind this project was to build a chatbot that mimics a Retriever
 
 
 ## <u>Core Functions</u>
-### `main.py`
-- Callback function called on each execution pass.
-- Initializes ScienceChatBot and predicts answers for user questions using the `predict_answer` method.
-- Returns the response in the form of SimpleText.
-- Answers are formatted as a list of strings, where each string is a concatenation of the question and its corresponding answer separated by a colon.
-
 ### `qamodel.py`
 - Defines and initializes the `ScienceChatBot` class with configuration data from a YAML file (using `config.yaml`).
 - Implements functions for keyword extraction, fetching Wikipedia articles, filtering and combining article content, and predicting answers based on user questions.
@@ -36,6 +30,7 @@ The intuition behind this project was to build a chatbot that mimics a Retriever
 
 ### `chatbot.py`
 - Renders the HTML template for the chatbot interface.
+- Initializes ScienceChatBot and predicts answers for user questions using the `predict_answer` method.
 - Processes user input, gets the predicted answers, and returns the responses in JSON format.
 
 ### `index.html`
